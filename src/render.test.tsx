@@ -3,10 +3,16 @@ import { Text } from "ink"
 import { test, expect } from "vitest"
 import { renderFrames } from "./render.js"
 
+// The update is deferred through a timer rather than set straight from the
+// effect: React may batch an effect's setState into the initial render, which
+// yields a single frame and makes the history test pass or fail depending on
+// scheduling. A timer cannot be batched with the first paint, so there are
+// always two distinct frames to find.
 const Changing = () => {
   const [n, setN] = useState(0)
   useEffect(() => {
-    setN(1)
+    const later = setTimeout(() => setN(1), 20)
+    return () => clearTimeout(later)
   }, [])
   return <Text>value {n}</Text>
 }

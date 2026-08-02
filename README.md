@@ -1,9 +1,29 @@
-# @kud/cli-testing
+<div align="center">
 
-Test helpers for Ink CLIs — frame-history rendering and isolated subprocess runs.
+# 🧪 cli-testing
+
+<img src="https://img.shields.io/npm/v/@kud/cli-testing?style=flat-square" alt="npm version" />
+<img src="https://img.shields.io/badge/licence-MIT-blue?style=flat-square" alt="MIT licence" />
+<img src="https://img.shields.io/badge/node-%3E%3D20-brightgreen?style=flat-square" alt="Node >=20" />
+
+**Test helpers for Ink CLIs — frame-history rendering and isolated subprocess runs.**
+
+[Website](https://kud.io/projects/cli-testing) ·
+[Documentation](https://kud.io/projects/cli-testing/docs) ·
+[npm](https://www.npmjs.com/package/@kud/cli-testing)
+
+</div>
 
 Two tiers, matching the two ways a terminal app can be wrong: the component
 renders the wrong thing, or the binary behaves wrongly when actually run.
+
+## Features
+
+- **Frame history by default** — `output()` reads every frame, so a command that renders then exits doesn't race its own unmount
+- **`waitFor` that explains itself** — a timeout reports the frames that *were* drawn, not just that time ran out
+- **Real-binary runs** — `runCli` spawns the actual entry point, not a mocked module
+- **Environment genuinely withheld** — fresh temp `HOME` *and* `cwd`, so a stray `.env` can't hand back the credentials you scrubbed
+- **Peer-resolved** — binds to your `react`, `ink` and `ink-testing-library`, never its own copies
 
 ## Why
 
@@ -96,3 +116,7 @@ npm run build
 ## Licence
 
 MIT © Erwann Mest
+
+---
+
+📚 **Full documentation → [cli-testing/docs](https://kud.io/projects/cli-testing/docs)**
