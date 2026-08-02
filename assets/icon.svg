@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="cli-testing">
+  <!-- Terminal frame: the shared shape across the cli-* tools. -->
+  <rect x="4.5" y="10.5" width="55" height="43" rx="6"
+        fill="none" stroke="#8B95A5" stroke-width="3"/>
+  <!-- Prompt caret, bottom-left, marking this as a terminal thing. -->
+  <path d="M13 44l6-5-6-5" fill="none" stroke="#8B95A5" stroke-width="3"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Tick: the part unique to cli-testing. A different silhouette from
+       cli-shot's shutter, so the two are told apart by shape rather than by
+       hue — they sit side by side in the same grid. -->
+  <path d="M28 33l6.5 6.5L48 24" fill="none" stroke="#2DD4BF" stroke-width="4"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
