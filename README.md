@@ -109,8 +109,9 @@ npm run build
 
 ## Related
 
-- [@kud/cli-shot](https://github.com/kud/cli-shot) — screenshots, built on these
-  helpers rather than beside them
+- [@kud/cli-shot](https://github.com/kud/cli-shot) — screenshots. A sibling, not
+  a dependent: it shares the app contract (`--mock`, `--screen`) but none of this
+  code, since `runCli`'s isolation would get in a screenshot's way
 - [@kud/ink-ui](https://github.com/kud/ink-ui) — the components under test
 
 ## Licence
